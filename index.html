@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>स्वतंत्रता दिवस 2025: भारत की गौरव गाथा</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:wght@300;400;600&family=Teko:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- ===> SAARA CSS YAHAN HAI <=== -->
+    <style>
+        :root {
+            --primary-bg: #0a0a1a; --text-color: #e0e0e0; --gold-accent: #FFD700; --saffron: #FF9933; --white: #FFFFFF; --green: #13880E;
+            --font-heading: 'Lora', serif; --font-body: 'Poppins', sans-serif; --font-display: 'Teko', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { background-color: var(--primary-bg); color: var(--text-color); font-family: var(--font-body); overflow-x: hidden; cursor: none; }
+        
+        #preloader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--primary-bg); display: flex; justify-content: center; align-items: center; z-index: 1000; transition: opacity 0.5s ease; }
+        .chakra-loader { width: 80px; height: 80px; border: 4px solid var(--gold-accent); border-radius: 50%; border-top-color: transparent; animation: spin 1s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        #cursor, #cursor-dot { position: fixed; transform: translate(-50%, -50%); border-radius: 50%; pointer-events: none; z-index: 9999; }
+        #cursor { width: 40px; height: 40px; border: 2px solid var(--gold-accent); transition: transform 0.2s ease-out, width 0.3s ease, height 0.3s ease; }
+        #cursor-dot { width: 6px; height: 6px; background-color: var(--gold-accent); }
+        #cursor.hover { transform: translate(-50%, -50%) scale(1.5); border-color: var(--saffron); }
+        #music-player { position: fixed; bottom: 20px; right: 20px; z-index: 999; width: 50px; height: 50px; background: rgba(255, 215, 0, 0.2); border: 1px solid var(--gold-accent); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: var(--gold-accent); font-size: 20px; cursor: pointer; backdrop-filter: blur(5px); transition: transform 0.3s, box-shadow 0.3s; }
+        #music-player:hover { transform: scale(1.1); box-shadow: 0 0 15px var(--gold-accent); }
+
+        .hero-section { height: 100vh; display: flex; justify-content: center; align-items: center; text-align: center; position: relative; overflow: hidden; }
+        .video-background { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+        #bg-video { width: 100%; height: 100%; object-fit: cover; opacity: 0.3; }
+        .hero-content { z-index: 2; }
+        .hero-content h1 { font-family: var(--font-heading); font-size: clamp(2.5rem, 8vw, 8rem); font-weight: 700; color: white; text-shadow: 0 0 20px rgba(0,0,0,0.5); }
+        .hero-content h2 { font-family: var(--font-display); font-size: clamp(3rem, 10vw, 8rem); letter-spacing: 5px; color: var(--gold-accent); margin-top: -2vw; text-shadow: 0 0 15px var(--gold-accent); }
+        .hero-content p { font-size: clamp(1rem, 1.5vw, 1.5rem); letter-spacing: 2px; padding: 0 10px; }
+        .scroll-down-indicator { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 2; }
+        .scroll-down-indicator span { display: block; width: 20px; height: 20px; border-bottom: 2px solid white; border-right: 2px solid white; transform: rotate(45deg); animation: bounce 2s infinite; }
+        @keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateY(0) rotate(45deg); } 40% { transform: translateY(-15px) rotate(45deg); } 60% { transform: translateY(-8px) rotate(45deg); } }
+        
+        section { padding: 100px 10%; position: relative; }
+        .section-title { text-align: center; font-family: var(--font-heading); font-size: clamp(2.5rem, 5vw, 3.5rem); color: var(--gold-accent); margin-bottom: 60px; position: relative; }
+        .section-title::after { content: ''; display: block; width: 80px; height: 3px; background: var(--gold-accent); margin: 10px auto; }
+
+        .tiranga-section .cards-container { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .color-card { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 215, 0, 0.2); border-radius: 10px; padding: 30px; max-width: 320px; text-align: center; transition: transform 0.3s, box-shadow 0.3s; }
+        .color-card:hover { transform: translateY(-10px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+        .color-card h3 { font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 15px; }
+        .color-card .saffron { color: var(--saffron); } .color-card .white { color: var(--white); } .color-card .green { color: var(--green); }
+        .timeline { position: relative; max-width: 800px; margin: 0 auto; }
+        .timeline::after { content: ''; position: absolute; width: 4px; background: var(--gold-accent); opacity: 0.3; top: 0; bottom: 0; left: 50%; margin-left: -2px; }
+        .timeline-item { padding: 10px 40px; position: relative; width: 50%; margin-bottom: 40px; }
+        .timeline-item:nth-child(odd) { left: 0; text-align: right; }
+        .timeline-item:nth-child(even) { left: 50%; }
+        .timeline-item::after { content: ''; position: absolute; width: 20px; height: 20px; right: -10px; background-color: white; border: 4px solid var(--gold-accent); top: 25px; border-radius: 50%; z-index: 1; }
+        .timeline-item:nth-child(even)::after { left: -10px; }
+        .timeline-content { padding: 20px 30px; background: rgba(255, 255, 255, 0.05); border-radius: 8px; border: 1px solid rgba(255, 215, 0, 0.2); backdrop-filter: blur(5px); transition: transform 0.3s ease; }
+        .timeline-content:hover { transform: translateY(-5px); }
+        .timeline-content h3 { color: var(--saffron); font-family: var(--font-display); font-size: 2.5rem; letter-spacing: 2px; }
+        .heroes-section .heroes-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .hero-card { background: rgba(255, 255, 255, 0.05); border-radius: 10px; text-align: center; padding: 20px; overflow: hidden; position: relative; border: 1px solid rgba(255, 215, 0, 0.2); transition: transform 0.3s; }
+        .hero-card:hover { transform: scale(1.05); }
+        .hero-card img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 4px solid var(--gold-accent); margin-bottom: 20px; }
+        .hero-card h3 { font-family: var(--font-heading); font-size: 1.5rem; color: var(--saffron); }
+        .hero-card p { font-size: 0.9rem; margin-top: 10px; }
+        .gallery-section .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .gallery-item { height: 250px; border-radius: 10px; overflow: hidden; background-size: cover; background-position: center; position: relative; transition: transform 0.3s; }
+        .gallery-item:hover { transform: scale(1.05); }
+        .gallery-item::after { content: attr(data-title); position: absolute; bottom: 0; left: 0; width: 100%; padding: 10px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); color: white; font-weight: 600; text-align: center; transform: translateY(100%); transition: transform 0.3s; }
+        .gallery-item:hover::after { transform: translateY(0); }
+
+        .pledge-section { text-align: center; } .pledge-form { max-width: 600px; margin: 0 auto 40px auto; }
+        .pledge-input { width: 100%; padding: 15px; background: transparent; border: 2px solid var(--gold-accent); border-radius: 8px; color: white; font-size: 1.2rem; text-align: center; margin-bottom: 20px; }
+        .pledge-btn { padding: 12px 30px; background: var(--gold-accent); border: none; border-radius: 8px; color: var(--primary-bg); font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: all 0.3s; }
+        #pledge-display { max-width: 700px; margin: auto; padding: 30px; border: 2px dashed var(--gold-accent); border-radius: 10px; opacity: 0; transform: translateY(20px); transition: opacity 0.5s, transform 0.5s; min-height: 150px; display: flex; flex-direction: column; justify-content: center; }
+        #pledge-display.visible { opacity: 1; transform: translateY(0); }
+        #pledge-text { font-size: 1.2rem; font-style: italic; }
+        #pledge-name { margin-top: 15px; font-weight: 700; color: var(--saffron); font-size: 1.5rem; }
+        .chakra-section { padding: 100px 10%; }
+        
+        .final-section { text-align: center; padding: 100px 10%; background: linear-gradient(to top, #000008, var(--primary-bg)); }
+        .final-section h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); font-family: var(--font-heading); }
+        .final-section h3 { margin-top: 40px; font-size: clamp(3rem, 10vw, 6rem); font-weight: 700; color: var(--gold-accent); background: linear-gradient(45deg, var(--saffron), white, var(--green)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .developer-credit { text-align: center; padding: 30px 0; background-color: #050510; }
+        .developer-credit a { color: var(--gold-accent); text-decoration: none; }
+        
+        @media (max-width: 768px) {
+            #cursor, #cursor-dot { display: none; } body { cursor: auto; }
+            section { padding: 80px 5%; }
+            .timeline::after { left: 31px; }
+            .timeline-item { width: 100%; padding-left: 70px; padding-right: 15px; }
+            .timeline-item:nth-child(odd), .timeline-item:nth-child(even) { left: 0; text-align: left; }
+            .timeline-item::after, .timeline-item:nth-child(even)::after { left: 21px; right: auto; }
+            #music-player { width: 45px; height: 45px; font-size: 18px; bottom: 15px; right: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="preloader"><div class="chakra-loader"></div></div>
+    <div id="cursor"></div><div id="cursor-dot"></div>
+    <audio id="bg-music" loop><source src="1.mp3" type="audio/mpeg"></audio>
+    <div id="music-player"><i class="fas fa-play" id="play-icon"></i><i class="fas fa-pause" id="pause-icon" style="display: none;"></i></div>
+
+    <header class="hero-section">
+        <div class="video-background"><video autoplay muted loop playsinline id="bg-video"><source src="kk.mp4" type="video/mp4"></video></div>
+        <div class="hero-content">
+            <h1 data-aos="fade-up">भारत की गौरव गाथा</h1>
+            <h2 data-aos="fade-up" data-aos-delay="200">2025</h2>
+            <p data-aos="fade-up" data-aos-delay="400">एक राष्ट्र का उदय, एक भविष्य का संकल्प</p>
+        </div>
+        <div class="scroll-down-indicator" data-aos="fade-up" data-aos-delay="600"><span></span></div>
+    </header>
+
+    <main>
+        <!-- Tiranga Section -->
+        <section class="tiranga-section">
+            <h2 class="section-title" data-aos="fade-in">तिरंगे की कहानी</h2>
+            <div class="cards-container">
+                <div class="color-card" data-aos="fade-up" data-aos-delay="100"><h3 class="saffron">केसरिया</h3><p>यह रंग देश की शक्ति और साहस को दर्शाता है। यह हमारे बलिदान और निस्वार्थता की भावना का प्रतीक है।</p></div>
+                <div class="color-card" data-aos="fade-up" data-aos-delay="200"><h3 class="white">सफ़ेद</h3><p>यह रंग शांति, सच्चाई और पवित्रता का प्रतीक है। यह हमें धर्म चक्र के साथ सत्य के मार्ग पर चलने की प्रेरणा देता है।</p></div>
+                <div class="color-card" data-aos="fade-up" data-aos-delay="300"><h3 class="green">हरा</h3><p>यह रंग देश के विकास, उर्वरता और भूमि की पवित्रता को दर्शाता है। यह हमारे कृषि प्रधान राष्ट्र का प्रतीक है।</p></div>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section class="timeline-section">
+            <h2 class="section-title" data-aos="fade-in">समय का महा-सफर</h2>
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-right"><div class="timeline-content"><h3>1857</h3><p>स्वतंत्रता संग्राम की पहली चिंगारी।</p></div></div>
+                <div class="timeline-item" data-aos="fade-left"><div class="timeline-content"><h3>1947</h3><p>स्वतंत्रता का सूर्योदय। एक नए भारत का जन्म।</p></div></div>
+                <div class="timeline-item" data-aos="fade-right"><div class="timeline-content"><h3>1965</h3><p>हरित क्रांति की शुरुआत, देश अन्न में आत्मनिर्भर हुआ।</p></div></div>
+                <div class="timeline-item" data-aos="fade-left"><div class="timeline-content"><h3>1998</h3><p>पोखरण-II परमाणु परीक्षण, भारत एक परमाणु शक्ति बना।</p></div></div>
+                <div class="timeline-item" data-aos="fade-right"><div class="timeline-content"><h3>2013</h3><p>मंगलयान का सफल प्रक्षेपण, भारत ने अंतरिक्ष में इतिहास रचा।</p></div></div>
+                <div class="timeline-item" data-aos="fade-left"><div class="timeline-content"><h3>2023</h3><p>चंद्रयान-3 की सफल लैंडिंग, चाँद के दक्षिणी ध्रुव पर पहला देश।</p></div></div>
+                <div class="timeline-item" data-aos="fade-right"><div class="timeline-content"><h3>2025</h3><p>डिजिटल क्रांति और आत्मनिर्भर भारत का सपना।</p></div></div>
+            </div>
+        </section>
+
+        <!-- Heroes Section -->
+        <section class="heroes-section">
+            <h2 class="section-title" data-aos="fade-in">वीर गाथा: हमारे नायक</h2>
+            <div class="heroes-container">
+                <div class="hero-card" data-aos="fade-up" data-aos-delay="100"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Mahatma-Gandhi%2C_studio%2C_1931.jpg/800px-Mahatma-Gandhi%2C_studio%2C_1931.jpg" alt="Mahatma Gandhi"><h3>महात्मा गाँधी</h3><p>अहिंसा के पुजारी और राष्ट्रपिता, जिन्होंने सत्य और शांति के मार्ग पर चलकर देश को आज़ादी दिलाई।</p></div>
+                <div class="hero-card" data-aos="fade-up" data-aos-delay="200"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Sardar_patel_%28cropped%29.jpg" alt="Sardar Patel"><h3>सरदार पटेल</h3><p>भारत के लौह पुरुष, जिन्होंने 500 से अधिक रियासतों का एकीकरण कर एक अखंड भारत का निर्माण किया।</p></div>
+                <div class="hero-card" data-aos="fade-up" data-aos-delay="300"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQT9ZuLgnQoZdPRjDvtwOs9w5z4mQx2EJ35RFo86Sk_3ZS2mEoejkYGxTI&s=10" alt="Subhas Chandra Bose"><h3>सुभाष चंद्र बोस</h3><p>"तुम मुझे खून दो, मैं तुम्हें आज़ादी दूँगा" के नारे के साथ आज़ाद हिंद फ़ौज का गठन किया।</p></div>
+                <div class="hero-card" data-aos="fade-up" data-aos-delay="400"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Bhagat_Singh_1929.jpg/800px-Bhagat_Singh_1929.jpg" alt="Bhagat Singh"><h3>भगत सिंह</h3><p>एक महान क्रांतिकारी जिन्होंने देश की आज़ादी के लिए हँसते-हँसते अपने प्राणों की आहुति दे दी।</p></div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="gallery-section">
+            <h2 class="section-title" data-aos="fade-in">गौरवशाली भारत की झलक</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" data-aos="zoom-in" data-title="डिजिटल इंडिया" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEyBbk_Fxf0lzabonsRxiWhGmgCXGuxxLSdqX0-Yatt-JPvXEtvKKbr1Wk&s=10');"></div>
+                <div class="gallery-item" data-aos="zoom-in" data-delay="100" data-title="ISRO का प्रक्षेपण" style="background-image: url('https://images.pexels.com/photos/586056/pexels-photo-586056.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');"></div>
+                <div class="gallery-item" data-aos="zoom-in" data-delay="200" data-title="समृद्ध संस्कृति" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbu-PYqZ_-bbYSRJqOU-2IpWqp1ShecxjiVSAY7DwcRghromSQaFcrZBVS&s=10');"></div>
+            </div>
+        </section>
+        
+        <!-- Pledge Section -->
+        <section class="pledge-section">
+             <h2 class="section-title" data-aos="fade-in">मेरा भारत, मेरा वचन</h2>
+             <div class="pledge-form" data-aos="fade-up"><input type="text" id="name-input" class="pledge-input" placeholder="अपना नाम यहाँ लिखें..."><button id="pledge-btn" class="pledge-btn">वचन लें</button></div>
+             <div id="pledge-display"><p id="pledge-text">"मैं वचन लेता/लेती हूँ कि भारत की एकता, अखंडता और गौरव को बनाए रखने के लिए सदैव तत्पर रहूँगा/रहूँगी।"</p><p id="pledge-name"></p></div>
+        </section>
+
+        <!-- Chakra Section -->
+        <section class="chakra-section">
+            <div id="particles-js"></div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Ashoka_Chakra.svg/1200px-Ashoka_Chakra.svg.png" alt="Ashoka Chakra" class="chakra-image" style="width: clamp(150px, 20vw, 200px); position: relative; z-index: 2; animation: rotateChakra 60s linear infinite;">
+            <p style="text-align:center; max-width:600px; margin-top:20px; position:relative; z-index:2;">अशोक चक्र, जो सारनाथ के सिंह शीर्ष से लिया गया है, निरंतर प्रगति और धर्म के मार्ग का प्रतीक है।</p>
+        </section>
+
+        <footer class="final-section">
+            <h2 data-aos="fade-up">भविष्य हमारे हाथों में है।</h2>
+            <h3 data-aos="zoom-in" data-aos-delay="400">जय हिन्द!</h3>
+        </footer>
+    </main>
+    
+    <div class="developer-credit" data-aos="fade-up">
+        <p>Designed & Developed with ❤️ by<br> <a href="https://instagram.com/babubhaikundan" target="_blank" rel="noopener noreferrer">𝕂𝕦𝕟𝕕𝕒𝕟 𝕐𝕒𝕕𝕒𝕧 ⚠️</a></p>
+        <p style="margin-top: 10px;">
+            <a href="https://babubhaikundan.blogspot.com/" target="_blank" rel="noopener noreferrer">Click here 👇 <br>About The Developer💀</a>
+        </p>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // ===> JAVASCRIPT ME BADLAV YAHAN KIYA GAYA HAI <===
+
+        document.addEventListener('DOMContentLoaded', () => {
+            AOS.init({ duration: 800, once: !0, offset: 50 });
+            
+            const e = document.getElementById('preloader');
+            window.addEventListener('load', () => {
+                e.style.opacity = '0';
+                setTimeout(() => { e.style.display = 'none' }, 500);
+            });
+
+            particlesJS('particles-js', { particles: { number: { value: 80, density: { enable: !0, value_area: 800 } }, color: { value: ['#FF9933', '#FFFFFF', '#13880E'] }, shape: { type: 'circle' }, opacity: { value: .6, random: !0 }, size: { value: 3, random: !0 }, line_linked: { enable: !1 }, move: { enable: !0, speed: 1, direction: 'none', random: !0, straight: !1, out_mode: 'out', bounce: !1 } }, interactivity: { detect_on: 'canvas', events: { onhover: { enable: !0, mode: 'repulse' }, onclick: { enable: !0, mode: 'push' }, resize: !0 } }, retina_detect: !0 });
+            
+            const t = document.getElementById('cursor'), o = document.getElementById('cursor-dot'), a = document.querySelectorAll('a, button');
+            document.addEventListener('mousemove', e => { t.style.left = e.clientX + 'px'; t.style.top = e.clientY + 'px'; o.style.left = e.clientX + 'px'; o.style.top = e.clientY + 'px' });
+            a.forEach(e => { e.addEventListener('mouseover', () => t.classList.add('hover')); e.addEventListener('mouseout', () => t.classList.remove('hover')) });
+            
+            const n = document.querySelector('.hero-content');
+            window.addEventListener('scroll', () => { let e = window.pageYOffset; e < window.innerHeight && (n.style.transform = `translateY(${.5 * e}px)`) });
+            
+            const d = document.getElementById('music-player'), s = document.getElementById('bg-music'), l = document.getElementById('play-icon'), c = document.getElementById('pause-icon');
+            let i = !1;
+
+            let playPromise = s.play();
+            if (playPromise !== undefined) {
+                playPromise.then(_ => {
+                    l.style.display = 'none'; c.style.display = 'block'; i = !0;
+                }).catch(error => {
+                    console.log("Autoplay was prevented by the browser.");
+                    l.style.display = 'block'; c.style.display = 'none'; i = !1;
+                });
+            }
+
+            d.addEventListener('click', () => { 
+                i ? (s.pause(), l.style.display = 'block', c.style.display = 'none') : (s.play(), l.style.display = 'none', c.style.display = 'block');
+                i = !i 
+            });
+            
+            // --- TELEGRAM FUNCTIONALITY START ---
+            const r = document.getElementById('pledge-btn'), 
+                  p = document.getElementById('name-input'), 
+                  m = document.getElementById('pledge-display'), 
+                  u = document.getElementById('pledge-name');
+
+            // Function to send data to Telegram
+            function sendToTelegram(name) {
+                const botToken = '8338911838:AAG5qTixTQyun4ktSUufxgOf1RDL25FhIWY';
+                const channelId = '-1002588189635';
+                const message = `🔔 नया वचन लिया गया!\n\nनाम: ${name}`;
+
+                const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${channelId}&text=${encodeURIComponent(message)}`;
+
+                fetch(url)
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log('Telegram API response:', data);
+                    })
+                    .catch(error => {
+                        console.error('Error sending message to Telegram:', error);
+                    });
+            }
+
+            r.addEventListener('click', () => { 
+                const userName = p.value.trim(); 
+                if (userName) {
+                    // Update the UI
+                    u.textContent = `- ${userName}`;
+                    m.classList.add('visible');
+
+                    // Send the name to your Telegram channel
+                    sendToTelegram(userName);
+                } else {
+                    alert('कृपया अपना नाम दर्ज करें।');
+                }
+            });
+            // --- TELEGRAM FUNCTIONALITY END ---
+        });
+    </script>
+</body>
+</html>
